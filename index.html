@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/main.css">
+    <link rel="shortcut icon" href="https://cdn3.iconfinder.com/data/icons/food-and-nutrition-icons-set/28/food_cooking_meal_2-512.png" type="image/png">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism-ruby.min.css" media="screen">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="flex-content-container">
+      <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="https://wphoong.github.io" class="navbar-brand">Home</a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#about">About<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#code-samples">Code Samples</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#web-apps">Web Apps</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item dropdown">
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <br />
+
+      <div id="about" class="booyah-box col-10 offset-1 text-center">
+        <h1>Wilson Phoong</h1>
+        <h2>SOFTWARE ENGINEER</h2>
+        <hr />
+      </div>
+      <br/>
+
+      <div id="code-samples" class="booyah-box col-10 offset-1 text-center">
+        <h2>Code Snippets</h2>
+          <hr class="yellow">
+          <div class="box">
+            <h4>Temperature Conversion</h4>
+            <p>
+              This ruby program will prompt the user for a temperature
+              in degrees Celsius and let the user know what the
+              corresponding temperature is in Fahrenheit.
+            </p>
+            <pre>
+              <code class="language-ruby float-left text-left">
+                n = 0
+                while n &lt; 10
+                  puts &quot;Hello, #{n}&quot;
+                  n = n + 1
+                end
+
+                puts &quot;Goodbye&quot;
+              </code>
+            </pre>
+          </div>
+          <br class="clear" />
+          <div class="box">
+            <h4>Ordinal Challenge</h4>
+            <p>
+              This ruby program will convert a plain number to the ordinal of the number. So for example, if the user enters 2, it will display 2nd, if the user enters 3, it will display 3rd, etc.
+            </p>
+          </div>
+
+          <br class="clear" />
+
+          <div class="box">
+            <h4>Foobar</h4>
+            <p>
+            This ruby program is an adaptation of a classic technical interview problem which displays sequences of the Foobar pattern.
+            </p>
+          </div>
+        <!-- end of Code snippets -->
+        <br class="clear" />
+      </div>
+      <br/>
+      <div id="web-apps" class="booyah-box col-10 offset-1 text-center">
+        <h2>Web Applications</h2>
+        <hr class="yellow" />
+        <div class="box">
+          <h4>Quote Generator</h4>
+          <img src="splurty.png" alt="No Image!" class="full-width" />
+          <p>
+            A database-powered quote generator with a mobile-first
+            design, using the Ruby on Rails framework, HTML, and CSS.
+            Uses Git and GitHub for version control, and launched
+            on Heroku.
+          </p>
+        </div>
+        <div class="box">
+          <h4>Yelp Clone</h4>
+          <img src="nomster.png" class="full-width" />
+          <p>
+            A Yelp clone that integrates with the Google Maps API
+            and includes features like user comments, star ratings,
+            image uploading, and user authentication.
+          </p>
+        </div>
+        <br class="clear" />
+        <div class="box">
+          <h4>Two-Sided Market Place</h4>
+          <img src="flixter.png" class="full-width" />
+          <p>
+            A two-sided, video-streaming marketplace platform that
+            features credit card payment capabilities, user role
+            management, complex user interfaces, and advanced
+            database relationships.
+          </p>
+        </div>
+        <div class="box">
+          <h4>Test Driven Development</h4>
+          <img src="grammable.png" class="full-width" />
+          <p>
+            An Instagram clone that was built using industry-standard, test-driven
+            development following numerous red/green/refactor cycles.
+          </p>
+        </div>
+        <br class="clear" />
+        <div class="box">
+          <h4>Single Page Todo Application</h4>
+          <img src="todoster.png" class="full-width" />
+          <p>
+            This single-page to-do application features a
+            fluid user interface that– by using JavaScript–
+            allows users to rapidly add dynamic content.
+          </p>
+        </div>
+        <div class="box">
+          <h4>Agile Team Project</h4>
+          <img src="chess.png" class="full-width" />
+          <p>
+            Worked on an Agile software development team building
+            a chess application. Under the guidance of a senior software engineer,
+            we had weekly Agile team meetings for code reviews, sprint planning,
+            and feature assignments.
+          </p>
+        </div>
+        <br class="clear" />
+      </div>
+      <!-- end of Web apps -->
+      <br/>
+      <div id="skills" class="booyah-box col-10 offset-1 text-center">
+        <h2>Skills</h2>
+      </div>
+      <br class='clr'/>
+      <br/>
+      <div id="footer">
+        <div class="container">
+          <b>Wilson P.</b>
+        </div>
+      </div>
+    </body>
+  </html>
