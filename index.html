@@ -8,7 +8,7 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism-ruby.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism-okaidia.css" media="screen">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   </head>
@@ -52,6 +52,64 @@
         <h2>Code Snippets</h2>
           <hr class="yellow">
           <div class="box">
+            <h4>Quick Sort Algorithm</h4>
+            <p>
+              Quicksort is a divide and conquer algorithm. Quicksort takes in an array of integers. Quicksort first divides a large array into two smaller sub-arrays: the low elements and the high elements. Quicksort can then recursively sort the sub-arrays.
+            </p>
+            <pre>
+              <code class="language-ruby okaida float-left text-left">
+                def quick_sort(list)
+                  raise 'Invalid input, expecting array of Ints'
+                  if list.nil? || !list.is_a?(Array) || list.all? { |x| !x.is_a?(Integer) }
+                  return list if list.empty?
+                  pivot_index = (list.length / 2).ceil
+                  pivot_value = list[pivot_index]
+                  list.delete_at(pivot_index)
+
+                  low = []
+                  high = []
+
+                  list.each do |x|
+                    if x <= pivot_value
+                      low << x
+                    else
+                      high << x
+                    end
+                  end
+                  quick_sort(low) + [pivot_value] + quick_sort(high)
+                end
+              </code>
+            </pre>
+          </div>
+          <br class="clear" />
+          <div class="box">
+            <h4>Bubble Sort Algorithm</h4>
+            <p>
+               Bubble Sort is a compare sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted. Bubble Sort takes in an array of integers.
+            </p>
+            <pre>
+              <code class="language-ruby okaida float-left text-left">
+              def bubble_sort(list)
+                raise 'Invalid input, expecting array of Ints'
+                if list.nil? || !list.is_a?(Array) || list.all? { |x| !x.is_a?(Integer) }
+                n = list.length
+                loop do
+                  swapped = false
+                  (n - 1).times do |i|
+                    if list[i] > list[i + 1]
+                      list[i], list[i + 1] = list[i + 1], list[i]
+                      swapped = true
+                    end
+                  end
+                  break unless swapped
+                end
+                list
+              end
+              </code>
+            </pre>
+          </div>
+          <br class="clear" />
+          <div class="box">
             <h4>Temperature Conversion</h4>
             <p>
               This ruby program will prompt the user for a temperature
@@ -59,13 +117,12 @@
               corresponding temperature is in Fahrenheit.
             </p>
             <pre>
-              <code class="language-ruby float-left text-left">
+              <code class="language-ruby okaida float-left text-left">
                 n = 0
                 while n &lt; 10
                   puts &quot;Hello, #{n}&quot;
                   n = n + 1
                 end
-
                 puts &quot;Goodbye&quot;
               </code>
             </pre>
@@ -77,9 +134,7 @@
               This ruby program will convert a plain number to the ordinal of the number. So for example, if the user enters 2, it will display 2nd, if the user enters 3, it will display 3rd, etc.
             </p>
           </div>
-
           <br class="clear" />
-
           <div class="box">
             <h4>Foobar</h4>
             <p>
@@ -165,5 +220,7 @@
           <b>Wilson P.</b>
         </div>
       </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-ruby.js"></script>
     </body>
   </html>
