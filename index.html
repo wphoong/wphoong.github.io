@@ -21,7 +21,7 @@
         <a href="https://wphoong.github.io" class="navbar-brand">Home</a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="#about">About<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -43,7 +43,7 @@
 
       <div id="about" class="booyah-box col-10 offset-1 text-center">
         <h1>Wilson Phoong</h1>
-        <h2>SOFTWARE ENGINEER</h2>
+        <h2>WEB DEVELOPER</h2>
         <hr />
       </div>
       <br/>
@@ -110,7 +110,7 @@
           </div>
           <br class="clear" />
           <div class="box">
-            <h4>Temperature Conversion</h4>
+            <h4>Fibonacci Sequence</h4>
             <p>
               This ruby program will prompt the user for a temperature
               in degrees Celsius and let the user know what the
@@ -133,13 +133,33 @@
             <p>
               This ruby program will convert a plain number to the ordinal of the number. So for example, if the user enters 2, it will display 2nd, if the user enters 3, it will display 3rd, etc.
             </p>
+            <pre>
+              <code class="language-ruby okaida float-left text-left">
+                n = 0
+                while n &lt; 10
+                  puts &quot;Hello, #{n}&quot;
+                  n = n + 1
+                end
+                puts &quot;Goodbye&quot;
+              </code>
+            </pre>
           </div>
           <br class="clear" />
           <div class="box">
-            <h4>Foobar</h4>
+            <h4>Foobar Challenge</h4>
             <p>
             This ruby program is an adaptation of a classic technical interview problem which displays sequences of the Foobar pattern.
             </p>
+            <pre>
+              <code class="language-ruby okaida float-left text-left">
+                n = 0
+                while n &lt; 10
+                  puts &quot;Hello, #{n}&quot;
+                  n = n + 1
+                end
+                puts &quot;Goodbye&quot;
+              </code>
+            </pre>
           </div>
         <!-- end of Code snippets -->
         <br class="clear" />
@@ -148,63 +168,71 @@
       <div id="web-apps" class="booyah-box col-10 offset-1 text-center">
         <h2>Web Applications</h2>
         <hr class="yellow" />
-        <div class="box">
-          <h4>Quote Generator</h4>
-          <img src="splurty.png" alt="No Image!" class="full-width" />
-          <p>
-            A database-powered quote generator with a mobile-first
-            design, using the Ruby on Rails framework, HTML, and CSS.
-            Uses Git and GitHub for version control, and launched
-            on Heroku.
-          </p>
-        </div>
-        <div class="box">
-          <h4>Yelp Clone</h4>
-          <img src="nomster.png" class="full-width" />
-          <p>
-            A Yelp clone that integrates with the Google Maps API
-            and includes features like user comments, star ratings,
-            image uploading, and user authentication.
-          </p>
-        </div>
-        <br class="clear" />
-        <div class="box">
-          <h4>Two-Sided Market Place</h4>
-          <img src="flixter.png" class="full-width" />
-          <p>
-            A two-sided, video-streaming marketplace platform that
-            features credit card payment capabilities, user role
-            management, complex user interfaces, and advanced
-            database relationships.
-          </p>
-        </div>
-        <div class="box">
-          <h4>Test Driven Development</h4>
-          <img src="grammable.png" class="full-width" />
-          <p>
-            An Instagram clone that was built using industry-standard, test-driven
-            development following numerous red/green/refactor cycles.
-          </p>
+
+        <div class="row">
+          <div class="box col-md-6">
+            <h4>Chess Game</h4>
+            <img src="assets/images/chess.png" alt="No Image!" class="full-width" />
+            <p>
+              Worked on an Agile software development team building
+              a chess application. Under the guidance of a senior software engineer,
+              we had weekly Agile team meetings for code reviews, sprint planning,
+              and feature assignments.
+            </p>
+          </div>
+          <div class="box col-md-6">
+            <h4>Nomster</h4>
+            <img src="assets/images/nomster.png" alt="No Image!" class="full-width" />
+            <p>
+              A Yelp clone that integrates with the Google Maps API
+              and includes features like user comments, star ratings,
+              image uploading, and user authentication.
+            </p>
+          </div>
         </div>
         <br class="clear" />
-        <div class="box">
-          <h4>Single Page Todo Application</h4>
-          <img src="todoster.png" class="full-width" />
-          <p>
-            This single-page to-do application features a
-            fluid user interface that– by using JavaScript–
-            allows users to rapidly add dynamic content.
-          </p>
+        <div class="row">
+          <div class="box col-md-6">
+            <h4>Flixter</h4>
+            <img src="assets/images/flixter.png" alt="No Image!" class="full-width" />
+            <p>
+              A two-sided, video-streaming marketplace platform that
+              features credit card payment capabilities, user role
+              management, complex user interfaces, and advanced
+              database relationships.
+            </p>
+          </div>
+          <div class="box col-md-6">
+            <h4>Grammable</h4>
+            <img src="assets/images/grammable.png" alt="No Image!" class="full-width" />
+            <p>
+              An Instagram clone that was built using industry-standard, test-driven
+              development following numerous red/green/refactor cycles.
+            </p>
+          </div>
         </div>
-        <div class="box">
-          <h4>Agile Team Project</h4>
-          <img src="chess.png" class="full-width" />
-          <p>
-            Worked on an Agile software development team building
-            a chess application. Under the guidance of a senior software engineer,
-            we had weekly Agile team meetings for code reviews, sprint planning,
-            and feature assignments.
-          </p>
+        <br class="clear" />
+
+        <div class="row">
+          <div class="box col-md-6">
+            <h4>To Do MVC</h4>
+            <img src="assets/images/todoster.png" alt="No Image!" class="full-width" />
+            <p>
+              This single-page to-do application features a
+              fluid user interface that– by using JavaScript–
+              allows users to rapidly add dynamic content.
+            </p>
+          </div>
+          <div class="box col-md-6">
+            <h4>Quote Generator</h4>
+            <img src="assets/images/splurty.png" alt="No Image!" class="full-width" />
+            <p>
+              A database-powered quote generator with a mobile-first
+              design, using the Ruby on Rails framework, HTML, and CSS.
+              Uses Git and GitHub for version control, and launched
+              on Heroku.
+            </p>
+          </div>
         </div>
         <br class="clear" />
       </div>
