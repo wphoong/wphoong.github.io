@@ -15,7 +15,7 @@
 }
 
 body {
-  background: url('../images/swirl.png');
+  background: url('../images/swirl.png') repeat;
   min-height:100%;
   display:flex;
   flex-direction: column;
