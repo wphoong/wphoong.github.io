@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Portfolio</title>
+    <title>Wilson Phoong's Portfolio</title>
+    <meta name="description" content="Wilson Phoong is a professional
+      software engineer specializing in full-stack development.
+      He has extensive experience with Ruby, Rails, JavaScript,
+      and building web applications.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="assets/stylesheets/main.css">
     <link rel="shortcut icon" href="https://cdn3.iconfinder.com/data/icons/food-and-nutrition-icons-set/28/food_cooking_meal_2-512.png" type="image/png">
@@ -33,14 +37,17 @@
             <li class="nav-item">
               <a class="nav-link" href="#skills">Skills</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#hire-me">Contact</a>
+            </li>
             <li class="nav-item dropdown">
             </li>
           </ul>
         </div>
       </nav>
 
-      <div class="hero text-center img-fluid">
-        <div id="about">
+      <div id="about" class="hero text-center img-fluid">
+        <div>
           <div class="name col-8 offset-2">
             <br />
             <h1 class="about">My name is</h1>
@@ -51,12 +58,26 @@
           </div>
         </div>
       </div>
-
       <br/>
+      <div class="booyah-box col-10 offset-1 text-center">
+        <h1>About Me</h1>
+        <hr / >
+        <h3 class="col-8 offset-2 describe">
+          <span id="title">Wilson</span> is a professional
+          web developer specializing in full-stack development.
+        </h3>
+        <h3 class="col-8 offset-2 describe">
+          He has extensive experience with Ruby, Rails, JavaScript,
+          and building web applications.
+        </h3>
+        <br />
+        <hr />
+      </div>
+      <br />
 
       <div id="code-samples" class="booyah-box col-10 offset-1 text-center">
         <h1>Code Snippets</h1>
-          <hr class="yellow">
+          <hr class="bar" />
           <div class="box">
             <h4>Quick Sort Algorithm</h4>
             <p>
@@ -116,54 +137,59 @@
           </div>
           <br class="clear" />
           <div class="box">
-            <h4>Fibonacci Sequence</h4>
+            <h4>Factorial Challenge</h4>
             <p>
-              This ruby program will prompt the user for a temperature
-              in degrees Celsius and let the user know what the
-              corresponding temperature is in Fahrenheit.
+              This ruby program calculates the factorial of a number and only takes a number as an input. I demonstrate three different ways to approach this problem, with all three achieving the same result.
             </p>
             <pre>
               <code class="language-ruby okaida float-left text-left">
-                n = 0
-                while n &lt; 10
-                  puts &quot;Hello, #{n}&quot;
-                  n = n + 1
+                module Factorial
+                  def self.of(number)
+                    raise 'Invalid Input' if number.nil? || number.is_a?(String)
+                    factorial = 1
+                    count = number
+                    while count > 0
+                      factorial *= count
+                      count -= 1
+                    end
+                    factorial
+                  end
+
+                  def self.of2(number)
+                    raise 'Invalid Input' if number.nil? || number.is_a?(String)
+                    (1..number).inject { |factorial, n| factorial * n }
+                  end
+
+                  def self.of3(number)
+                    raise 'Invalid Input' if number.nil? || number.is_a?(String)
+                    (1..number).reduce(1, :*)
+                  end
                 end
-                puts &quot;Goodbye&quot;
               </code>
             </pre>
           </div>
           <br class="clear" />
           <div class="box">
-            <h4>Ordinal Challenge</h4>
+            <h4>FizzBuzz Challenge</h4>
             <p>
-              This ruby program will convert a plain number to the ordinal of the number. So for example, if the user enters 2, it will display 2nd, if the user enters 3, it will display 3rd, etc.
+              This ruby program prints the numbers from 1 to the input. For multiples of 3, it prints 'fizz' instead of the number, and for multiples of 5, it prints 'buzz'. For numbers which are multiples of both 3 and 5, it prints 'fizzbuzz'.
             </p>
             <pre>
               <code class="language-ruby okaida float-left text-left">
-                n = 0
-                while n &lt; 10
-                  puts &quot;Hello, #{n}&quot;
-                  n = n + 1
+                def fizzbuzz(number)
+                  raise 'Invalid Input' if number.nil? || number.is_a?(String)
+                  (1..number).each do |count|
+                    if (count % 3).zero? &amp;&amp; (count % 5).zero?
+                      puts 'fizzbuzz'
+                    elsif (count % 3).zero?
+                      puts 'fizz'
+                    elsif (count % 5).zero?
+                      puts 'buzz'
+                    else
+                      puts count
+                    end
+                  end
                 end
-                puts &quot;Goodbye&quot;
-              </code>
-            </pre>
-          </div>
-          <br class="clear" />
-          <div class="box">
-            <h4>Foobar Challenge</h4>
-            <p>
-            This ruby program is an adaptation of a classic technical interview problem which displays sequences of the Foobar pattern.
-            </p>
-            <pre>
-              <code class="language-ruby okaida float-left text-left">
-                n = 0
-                while n &lt; 10
-                  puts &quot;Hello, #{n}&quot;
-                  n = n + 1
-                end
-                puts &quot;Goodbye&quot;
               </code>
             </pre>
           </div>
@@ -173,7 +199,7 @@
       <br/>
       <div id="web-apps" class="booyah-box col-10 offset-1 text-center">
         <h1>Web Applications</h1>
-        <hr class="yellow" />
+        <hr class="bar" />
 
         <div class="row">
           <div class="box col-md-6">
@@ -247,7 +273,7 @@
       <br/>
       <div id="skills" class="booyah-box col-10 offset-1 text-center">
         <h1>Skills &amp; Tools</h1>
-        <hr />
+        <hr class="bar"/>
 
         <p class="skills-and-tools">
           Wilson has developed proficiency and expertise
@@ -266,14 +292,25 @@
         </div>
       </div>
       <br class='clear'/>
-      <br/>
+
       <div id="footer">
-        <div class="container text-right">
-          <span>
-            <b>Email: wphoong@gmail.com</b>
-            <a href="https://www.github.com/wphoong">Github</a>
-            <a href="https://codepen.io/wilxp/pens/popular/">Codepen</a>
-          </span>
+        <div class="container">
+          <div class="row">
+            <span id="contact" class="col-sm-10">
+              Currently entertaining new opportunities.
+              <p>
+              Please get in touch via email:
+              <a href="mailto:wphoong@gmail.com" class="contact-link">
+                wphoong@gmail.com
+              </a>
+              </p>
+            </span>
+            <span class="float-right col-md-2">
+              <a href="https://www.github.com/wphoong"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+              <a href="https://codepen.io/wilxp/pens/popular/"><i class="fa fa-codepen fa-2x" aria-hidden="true"></i></a>
+              <a href="https://www.instagram.com/wilsonou/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+            </span>
+          </div>
         </div>
       </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.js"></script>

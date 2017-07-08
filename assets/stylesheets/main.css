@@ -37,6 +37,10 @@ img {
   padding-top: 22vh;
 }
 
+#title {
+  font-size: 50px;
+}
+
 #flex-content-container {
   flex: 1 0 auto;
 }
@@ -62,6 +66,12 @@ img {
   margin-top: auto
 }
 
+.bar {
+  border-top: 5px double;
+  border-bottom: none;
+  border-right: none;
+}
+
 .hero {
   margin-top: 0;
   background: url('../images/vintage.jpg') no-repeat center center fixed;
@@ -83,6 +93,10 @@ img {
 
 .about {
   font-size: 10vmin;
+}
+
+.describe {
+  font-size: 6vmin;
 }
 
 .navbar {
