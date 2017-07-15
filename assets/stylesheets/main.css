@@ -41,6 +41,10 @@ img {
   font-size: 8vmin;
 }
 
+#name, #aboutme {
+  display:none;
+}
+
 #flex-content-container {
   flex: 1 0 auto;
 }
