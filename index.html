@@ -17,6 +17,40 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $(function(){
+        var $animation_elements = $('.animation-element');
+        var $window = $(window);
+
+        $('#name').show('slide', { direction: "up" }, 1000);
+
+        function check_if_in_view() {
+          var window_height = $window.height();
+          var window_top_position = $window.scrollTop();
+          var window_bottom_position = (window_top_position + window_height);
+
+          $.each($animation_elements, function() {
+            var $element = $(this);
+            var element_height = $element.outerHeight();
+            var element_top_position = $element.offset().top;
+            var element_bottom_position = (element_top_position + element_height);
+
+            //check to see if this current container is within viewport
+            if ((element_bottom_position >= window_top_position) &&
+              (element_top_position <= window_bottom_position)) {
+              $element.addClass('in-view');
+            } else {
+              $element.removeClass('in-view');
+            }
+          });
+        }
+
+        $window.on('scroll resize', check_if_in_view);
+        $window.trigger('scroll');
+
+      });
+
+    </script>
   </head>
   <body>
     <div id="flex-content-container">
@@ -62,283 +96,300 @@
           </div>
         </div>
         <br/>
-        <div id="aboutme" class="booyah-box col-10 offset-1 text-center">
-          <h1>About Me</h1>
-          <hr>
-          <h3 class="col-10 offset-1 describe">
-            <span id="title">Wilson</span> is a professional
-            software developer specializing in full-stack development.
-          </h3>
-          <h3 class="col-10 offset-1 describe">
-            He has extensive experience with Ruby, Rails, JavaScript,
-            and building web applications.
-          </h3>
-          <br>
-          <hr>
+
+        <div class="animation-element bounce-up">
+          <div class="subject">
+            <div id="aboutme" class="booyah-box col-10 offset-1 text-center">
+              <h1>About Me</h1>
+              <hr>
+              <h3 class="col-10 offset-1 describe">
+                <span id="title">Wilson</span> is a professional
+                software developer specializing in full-stack development.
+              </h3>
+              <h3 class="col-10 offset-1 describe">
+                He has extensive experience with Ruby, Rails, JavaScript,
+                and building web applications.
+              </h3>
+              <br>
+              <hr>
+            </div>
+          </div>
         </div>
-        <br>
 
-        <div id="code-samples" class="booyah-box col-10 offset-1 text-center">
-          <h1>Code Snippets</h1>
-            <hr class="bar">
-            <div>
-              <h4>Quick Sort Algorithm</h4>
-              <p>
-                Quicksort is a divide and conquer algorithm. Quicksort takes in an array of integers. Quicksort first divides a large array into two smaller sub-arrays: the low elements and the high elements. Quicksort can then recursively sort the sub-arrays.
-              </p>
-              <pre>
-                <code class="language-ruby okaida float-left text-left">
-                  def quick_sort(list)
-                    raise 'Invalid input, expecting array of Ints'
-                    if list.nil? || !list.is_a?(Array) || list.all? { |x| !x.is_a?(Integer) }
-                    return list if list.empty?
-                    pivot_index = (list.length / 2).ceil
-                    pivot_value = list[pivot_index]
-                    list.delete_at(pivot_index)
+        <br class="clear">
+        <div class="animation-element bounce-up">
+          <div class="subject">
+            <div id="code-samples" class="booyah-box col-10 offset-1 text-center">
+              <h1>Code Snippets</h1>
+                <hr class="bar">
+                <div>
+                  <h4>Quick Sort Algorithm</h4>
+                  <p>
+                    Quicksort is a divide and conquer algorithm. Quicksort takes in an array of integers. Quicksort first divides a large array into two smaller sub-arrays: the low elements and the high elements. Quicksort can then recursively sort the sub-arrays.
+                  </p>
+                  <pre>
+                    <code class="language-ruby okaida float-left text-left">
+                      def quick_sort(list)
+                        raise 'Invalid input, expecting array of Ints'
+                        if list.nil? || !list.is_a?(Array) || list.all? { |x| !x.is_a?(Integer) }
+                        return list if list.empty?
+                        pivot_index = (list.length / 2).ceil
+                        pivot_value = list[pivot_index]
+                        list.delete_at(pivot_index)
 
-                    low = []
-                    high = []
+                        low = []
+                        high = []
 
-                    list.each do |x|
-                      if x <= pivot_value
-                        low << x
-                      else
-                        high << x
+                        list.each do |x|
+                          if x <= pivot_value
+                            low << x
+                          else
+                            high << x
+                          end
+                        end
+                        quick_sort(low) + [pivot_value] + quick_sort(high)
                       end
-                    end
-                    quick_sort(low) + [pivot_value] + quick_sort(high)
-                  end
-                </code>
-              </pre>
-            </div>
-            <br class="clear">
-            <div>
-              <h4>Bubble Sort Algorithm</h4>
-              <p>
-                 Bubble Sort is a compare sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted. Bubble Sort takes in an array of integers.
-              </p>
-              <pre>
-                <code class="language-ruby okaida float-left text-left">
-                def bubble_sort(list)
-                  raise 'Invalid input, expecting array of Ints'
-                  if list.nil? || !list.is_a?(Array) || list.all? { |x| !x.is_a?(Integer) }
-                  n = list.length
-                  loop do
-                    swapped = false
-                    (n - 1).times do |i|
-                      if list[i] > list[i + 1]
-                        list[i], list[i + 1] = list[i + 1], list[i]
-                        swapped = true
+                    </code>
+                  </pre>
+                </div>
+                <br class="clear">
+                <div>
+                  <h4>Bubble Sort Algorithm</h4>
+                  <p>
+                     Bubble Sort is a compare sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted. Bubble Sort takes in an array of integers.
+                  </p>
+                  <pre>
+                    <code class="language-ruby okaida float-left text-left">
+                    def bubble_sort(list)
+                      raise 'Invalid input, expecting array of Ints'
+                      if list.nil? || !list.is_a?(Array) || list.all? { |x| !x.is_a?(Integer) }
+                      n = list.length
+                      loop do
+                        swapped = false
+                        (n - 1).times do |i|
+                          if list[i] > list[i + 1]
+                            list[i], list[i + 1] = list[i + 1], list[i]
+                            swapped = true
+                          end
+                        end
+                        break unless swapped
                       end
+                      list
                     end
-                    break unless swapped
-                  end
-                  list
-                end
-                </code>
-              </pre>
-            </div>
-            <br class="clear">
-            <div>
-              <h4>Factorial Challenge</h4>
-              <p>
-                This ruby program calculates the factorial of a number and only takes a number as an input. I demonstrate three different ways to approach this problem, with all three achieving the same result.
-              </p>
-              <pre>
-                <code class="language-ruby okaida float-left text-left">
-                  module Factorial
-                    def self.of(number)
-                      raise 'Invalid Input' if number.nil? || number.is_a?(String)
-                      factorial = 1
-                      count = number
-                      while count > 0
-                        factorial *= count
-                        count -= 1
+                    </code>
+                  </pre>
+                </div>
+                <br class="clear">
+                <div>
+                  <h4>Factorial Challenge</h4>
+                  <p>
+                    This ruby program calculates the factorial of a number and only takes a number as an input. I demonstrate three different ways to approach this problem, with all three achieving the same result.
+                  </p>
+                  <pre>
+                    <code class="language-ruby okaida float-left text-left">
+                      module Factorial
+                        def self.of(number)
+                          raise 'Invalid Input' if number.nil? || number.is_a?(String)
+                          factorial = 1
+                          count = number
+                          while count > 0
+                            factorial *= count
+                            count -= 1
+                          end
+                          factorial
+                        end
+
+                        def self.of2(number)
+                          raise 'Invalid Input' if number.nil? || number.is_a?(String)
+                          (1..number).inject { |factorial, n| factorial * n }
+                        end
+
+                        def self.of3(number)
+                          raise 'Invalid Input' if number.nil? || number.is_a?(String)
+                          (1..number).reduce(1, :*)
+                        end
                       end
-                      factorial
-                    end
+                    </code>
+                  </pre>
+                </div>
 
-                    def self.of2(number)
-                      raise 'Invalid Input' if number.nil? || number.is_a?(String)
-                      (1..number).inject { |factorial, n| factorial * n }
-                    end
+                <br class="clear">
 
-                    def self.of3(number)
-                      raise 'Invalid Input' if number.nil? || number.is_a?(String)
-                      (1..number).reduce(1, :*)
-                    end
-                  end
-                </code>
-              </pre>
-            </div>
-
-            <br class="clear">
-
-            <div>
-              <h4>FizzBuzz Challenge</h4>
-              <p>
-                This ruby program prints the numbers from 1 to the input. For multiples of 3, it prints 'fizz' instead of the number, and for multiples of 5, it prints 'buzz'. For numbers which are multiples of both 3 and 5, it prints 'fizzbuzz'.
-              </p>
-              <pre>
-                <code class="language-ruby okaida float-left text-left">
-                  def fizzbuzz(number)
-                    raise 'Invalid Input' if number.nil? || number.is_a?(String)
-                    (1..number).each do |count|
-                      if (count % 3).zero? &amp;&amp; (count % 5).zero?
-                        puts 'fizzbuzz'
-                      elsif (count % 3).zero?
-                        puts 'fizz'
-                      elsif (count % 5).zero?
-                        puts 'buzz'
-                      else
-                        puts count
+                <div>
+                  <h4>FizzBuzz Challenge</h4>
+                  <p>
+                    This ruby program prints the numbers from 1 to the input. For multiples of 3, it prints 'fizz' instead of the number, and for multiples of 5, it prints 'buzz'. For numbers which are multiples of both 3 and 5, it prints 'fizzbuzz'.
+                  </p>
+                  <pre>
+                    <code class="language-ruby okaida float-left text-left">
+                      def fizzbuzz(number)
+                        raise 'Invalid Input' if number.nil? || number.is_a?(String)
+                        (1..number).each do |count|
+                          if (count % 3).zero? &amp;&amp; (count % 5).zero?
+                            puts 'fizzbuzz'
+                          elsif (count % 3).zero?
+                            puts 'fizz'
+                          elsif (count % 5).zero?
+                            puts 'buzz'
+                          else
+                            puts count
+                          end
+                        end
                       end
-                    end
-                  end
-                </code>
-              </pre>
+                    </code>
+                  </pre>
+                </div>
+              <br>
             </div>
-          <br class="clear">
+          </div>
         </div>
         <!-- end of Code snippets -->
-        <br/>
-        <div id="web-apps" class="booyah-box col-10 offset-1 text-center">
-          <h1>Web Applications</h1>
-          <hr class="bar">
+        <br class="clear">
+        <div class="animation-element bounce-up">
+          <div class="subject">
+            <div id="web-apps" class="booyah-box col-10 offset-1 text-center">
+              <h1>Web Applications</h1>
+              <hr class="bar">
 
-          <div class="row">
-            <div class="box col-12">
-              <div class="float-left col-lg-6 col-sm-12">
-              <h1 class="">Chess Game</h1>
-              <h5 class="">
-                Worked on an Agile software development team building
-                a chess application. Under the guidance of a senior software engineer,
-                we had weekly Agile team meetings for code reviews, sprint planning,
-                and feature assignments.
-              </h5>
+              <div class="row">
+                <div class="box col-12">
+                  <div class="float-left col-lg-6 col-sm-12">
+                  <h1 class="">Chess Game</h1>
+                  <h5 class="">
+                    Worked on an Agile software development team building
+                    a chess application. Under the guidance of a senior software engineer,
+                    we had weekly Agile team meetings for code reviews, sprint planning,
+                    and feature assignments.
+                  </h5>
+                  </div>
+                  <div class='col-lg-6 col-sm-12 float-left'>
+                    <img src="assets/images/chess.png" alt="No Image!" class="full-width" />
+                  </div>
+                </div>
               </div>
-              <div class='col-lg-6 col-sm-12 float-left'>
-                <img src="assets/images/chess.png" alt="No Image!" class="full-width" />
+
+              <br class="clear">
+
+              <div class="row">
+                <div class="box col-12">
+                  <div class="float-right col-lg-6 col-sm-12">
+                  <h1 class="">Nomster</h1>
+                  <h5>
+                    A Yelp clone that integrates with the Google Maps API
+                    and includes features like user comments, star ratings,
+                    image uploading, and user authentication.
+                  </h5>
+                  </div>
+                  <div class='col-lg-6 col-sm-12 float-left'>
+                  <img src="assets/images/nomster.png" alt="No Image!" class="full-width" />
+                  </div>
+                </div>
               </div>
+
+              <br class="clear">
+
+              <div class="row">
+                <div class="box col-12">
+                  <div class="float-left col-lg-6 col-sm-12">
+                    <h1>Flixter</h1>
+                    <h5>
+                      A two-sided, video-streaming marketplace platform that
+                      features credit card payment capabilities, user role
+                      management, complex user interfaces, and advanced
+                      database relationships.
+                    </h5>
+                  </div>
+                  <div class="col-lg-6 col-sm-12 float-left">
+                    <img src="assets/images/flixter.png" alt="No Image!" class="full-width" />
+                  </div>
+                </div>
+              </div>
+
+              <br class="clear">
+
+              <div class="row">
+                <div class="box col-12">
+                  <div class="float-right col-lg-6 col-sm-12">
+                    <h1>Grammable</h1>
+                    <h5>
+                      An Instagram clone that was built using industry-standard, test-driven
+                      development following numerous red/green/refactor cycles.
+                    </h5>
+                  </div>
+                  <div class="col-lg-6 col-sm-12 float-left">
+                    <img src="assets/images/grammable.png" alt="No Image!" class="full-width" />
+                  </div>
+                </div>
+              </div>
+
+              <br class="clear" />
+
+              <div class="row">
+                <div class="box col-12">
+                  <div class="float-left col-lg-6 col-sm-12">
+                    <h1>To Do MVC</h1>
+                    <h5>
+                      This single-page to-do application features a
+                      fluid user interface that– by using JavaScript–
+                      allows users to rapidly add dynamic content.
+                    </h5>
+                  </div>
+                  <div class="float-left col-lg-6 col-sm-12">
+                    <img src="assets/images/todoster.png" alt="No Image!" class="full-width" />
+                  </div>
+
+                </div>
+              </div>
+
+              <br class="clear" />
+
+              <div class="row">
+                <div class="box col-12">
+                  <div class="float-right col-lg-6 col-sm-12">
+                    <h1>Quote Generator</h1>
+                    <h5>
+                      A database-powered quote generator with a mobile-first
+                      design, using the Ruby on Rails framework, HTML, and CSS.
+                      Uses Git and GitHub for version control, and launched
+                      on Heroku.
+                    </h5>
+                  </div>
+                  <div class="float-left col-lg-6 col-sm-12">
+                    <img src="assets/images/splurty.png" alt="No Image!" class="full-width" />
+                  </div>
+                </div>
+              </div>
+              <br>
             </div>
           </div>
-
-          <br class="clear">
-
-          <div class="row">
-            <div class="box col-12">
-              <div class="float-right col-lg-6 col-sm-12">
-              <h1 class="">Nomster</h1>
-              <h5>
-                A Yelp clone that integrates with the Google Maps API
-                and includes features like user comments, star ratings,
-                image uploading, and user authentication.
-              </h5>
-              </div>
-              <div class='col-lg-6 col-sm-12 float-left'>
-              <img src="assets/images/nomster.png" alt="No Image!" class="full-width" />
-              </div>
-            </div>
-          </div>
-
-          <br class="clear">
-
-          <div class="row">
-            <div class="box col-12">
-              <div class="float-left col-lg-6 col-sm-12">
-                <h1>Flixter</h1>
-                <h5>
-                  A two-sided, video-streaming marketplace platform that
-                  features credit card payment capabilities, user role
-                  management, complex user interfaces, and advanced
-                  database relationships.
-                </h5>
-              </div>
-              <div class="col-lg-6 col-sm-12 float-left">
-                <img src="assets/images/flixter.png" alt="No Image!" class="full-width" />
-              </div>
-            </div>
-          </div>
-
-          <br class="clear">
-
-          <div class="row">
-            <div class="box col-12">
-              <div class="float-right col-lg-6 col-sm-12">
-                <h1>Grammable</h1>
-                <h5>
-                  An Instagram clone that was built using industry-standard, test-driven
-                  development following numerous red/green/refactor cycles.
-                </h5>
-              </div>
-              <div class="col-lg-6 col-sm-12 float-left">
-                <img src="assets/images/grammable.png" alt="No Image!" class="full-width" />
-              </div>
-            </div>
-          </div>
-
-          <br class="clear" />
-
-          <div class="row">
-            <div class="box col-12">
-              <div class="float-left col-lg-6 col-sm-12">
-                <h1>To Do MVC</h1>
-                <h5>
-                  This single-page to-do application features a
-                  fluid user interface that– by using JavaScript–
-                  allows users to rapidly add dynamic content.
-                </h5>
-              </div>
-              <div class="float-left col-lg-6 col-sm-12">
-                <img src="assets/images/todoster.png" alt="No Image!" class="full-width" />
-              </div>
-
-            </div>
-          </div>
-
-          <br class="clear" />
-
-          <div class="row">
-            <div class="box col-12">
-              <div class="float-right col-lg-6 col-sm-12">
-                <h1>Quote Generator</h1>
-                <h5>
-                  A database-powered quote generator with a mobile-first
-                  design, using the Ruby on Rails framework, HTML, and CSS.
-                  Uses Git and GitHub for version control, and launched
-                  on Heroku.
-                </h5>
-              </div>
-              <div class="float-left col-lg-6 col-sm-12">
-                <img src="assets/images/splurty.png" alt="No Image!" class="full-width" />
-              </div>
-            </div>
-          </div>
-          <br class="clear" />
         </div>
         <!-- end of Web apps -->
         <br class="clear" />
-        <div id="skills" class="booyah-box col-10 offset-1 text-center">
-          <h1>Skills &amp; Tools</h1>
-          <hr class="bar"/>
+        <div class="animation-element bounce-up">
+          <div class="subject">
+            <div id="skills" class="booyah-box col-10 offset-1 text-center">
+              <h1>Skills &amp; Tools</h1>
+              <hr class="bar"/>
 
-          <h5 class="skills-and-tools">
-            Wilson has developed proficiency and expertise
-            in the following programming languages and
-            comfort with the following tools.
-          </h5>
+              <h5 class="skills-and-tools">
+                Wilson has developed proficiency and expertise
+                in the following programming languages and
+                comfort with the following tools.
+              </h5>
 
-          <div class="icons">
-            <img src="assets/images/github.png" alt="No Image!" />
-            <img src="assets/images/rubocop.png" alt="No Image!" />
-            <img src="assets/images/trello.png" alt="No Image!" />
-            <img src="assets/images/slack.png" alt="No Image!" />
-            <img src="assets/images/heroku.png" alt="No Image!" />
-            <br class="clear" />
-            <img class="img-fluid" src="assets/images/skills.png" alt="No Image!" />
+              <div class="icons">
+                <img src="assets/images/github.png" alt="No Image!" />
+                <img src="assets/images/rubocop.png" alt="No Image!" />
+                <img src="assets/images/trello.png" alt="No Image!" />
+                <img src="assets/images/slack.png" alt="No Image!" />
+                <img src="assets/images/heroku.png" alt="No Image!" />
+                <br class="clear" />
+                <img class="img-fluid" src="assets/images/skills.png" alt="No Image!" />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+        <!-- end of skill -->
       <br class='clear'/>
 
       <div id="footer">
@@ -361,13 +412,8 @@
           </div>
         </div>
       </div>
+      <!-- end of footer -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-ruby.js"></script>
-      <script>
-        $(function(){
-            $('#name').show('slide', { direction: "up" }, 1000);
-            $('#aboutme').show('slide', { direction: "down" }, 3000);
-        });
-      </script>
     </body>
   </html>
