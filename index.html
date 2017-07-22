@@ -18,42 +18,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-      $(function(){
-        var $animation_elements = $('.animation-element');
-        var $window = $(window);
-
-        $('#name').show('slide', { direction: "up" }, 1000);
-
-        function check_if_in_view() {
-          var window_height = $window.height();
-          var window_top_position = $window.scrollTop();
-          var window_bottom_position = (window_top_position + window_height);
-
-          $.each($animation_elements, function() {
-            var $element = $(this);
-            var element_height = $element.outerHeight();
-            var element_top_position = $element.offset().top;
-            var element_bottom_position = (element_top_position + element_height);
-
-            //check to see if this current container is within viewport
-            if ((element_bottom_position >= window_top_position) &&
-              (element_top_position <= window_bottom_position)) {
-              $element.addClass('in-view');
-            } else {
-              $element.removeClass('in-view');
-            }
-          });
-        }
-
-        $window.on('scroll resize', check_if_in_view);
-        $window.trigger('scroll');
-
-      });
-
-    </script>
+    <script src="assets/lib/index.js"></script>
   </head>
-  <body>
+  <body class="load">
+    <!-- Beginning of nav bar -->
     <div id="flex-content-container">
         <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,6 +50,7 @@
             </ul>
           </div>
         </nav>
+        <!-- End of Nav -->
 
         <div id="about" class="hero text-center img-fluid">
           <div id="name">
@@ -96,7 +65,8 @@
             </div>
           </div>
         </div>
-        <br/>
+
+        <br class="clear">
 
         <div class="animation-element bounce-up">
           <div class="subject">
