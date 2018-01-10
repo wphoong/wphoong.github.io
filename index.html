@@ -34,16 +34,16 @@
                 <a class="nav-link" href="#about">About<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#code-samples">Code Samples</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link" href="#web-apps">Web Apps</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#skills">Skills</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#hire-me">Contact</a>
+                <a class="nav-link" href="#footer">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/wphoong">GitHub</a>
               </li>
               <li class="nav-item dropdown">
               </li>
@@ -86,135 +86,7 @@
             </div>
           </div>
         </div>
-
-        <br class="clear">
-        <div class="animation-element bounce-up">
-          <div class="subject">
-            <div id="code-samples" class="booyah-box col-10 offset-1 text-center">
-              <h1>Code Snippets</h1>
-                <hr class="bar">
-                <div>
-                  <h4>Quick Sort Algorithm</h4>
-                  <p>
-                    Quicksort is a divide and conquer algorithm. Quicksort takes in an array of integers. Quicksort first divides a large array into two smaller sub-arrays: the low elements and the high elements. Quicksort can then recursively sort the sub-arrays.
-                  </p>
-                  <pre>
-                    <code class="language-ruby okaida float-left text-left">
-                      def quick_sort(list)
-                        raise 'Invalid input, expecting array of Ints'
-                        if list.nil? || !list.is_a?(Array) || list.all? { |x| !x.is_a?(Integer) }
-                        return list if list.empty?
-                        pivot_index = (list.length / 2).ceil
-                        pivot_value = list[pivot_index]
-                        list.delete_at(pivot_index)
-
-                        low = []
-                        high = []
-
-                        list.each do |x|
-                          if x <= pivot_value
-                            low << x
-                          else
-                            high << x
-                          end
-                        end
-                        quick_sort(low) + [pivot_value] + quick_sort(high)
-                      end
-                    </code>
-                  </pre>
-                </div>
-                <br class="clear">
-                <div>
-                  <h4>Bubble Sort Algorithm</h4>
-                  <p>
-                     Bubble Sort is a compare sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items and swaps them if they are in the wrong order. The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted. Bubble Sort takes in an array of integers.
-                  </p>
-                  <pre>
-                    <code class="language-ruby okaida float-left text-left">
-                    def bubble_sort(list)
-                      raise 'Invalid input, expecting array of Ints'
-                      if list.nil? || !list.is_a?(Array) || list.all? { |x| !x.is_a?(Integer) }
-                      n = list.length
-                      loop do
-                        swapped = false
-                        (n - 1).times do |i|
-                          if list[i] > list[i + 1]
-                            list[i], list[i + 1] = list[i + 1], list[i]
-                            swapped = true
-                          end
-                        end
-                        break unless swapped
-                      end
-                      list
-                    end
-                    </code>
-                  </pre>
-                </div>
-                <br class="clear">
-                <div>
-                  <h4>Factorial Challenge</h4>
-                  <p>
-                    This ruby program calculates the factorial of a number and only takes a number as an input. I demonstrate three different ways to approach this problem, with all three achieving the same result.
-                  </p>
-                  <pre>
-                    <code class="language-ruby okaida float-left text-left">
-                      module Factorial
-                        def self.of(number)
-                          raise 'Invalid Input' if number.nil? || number.is_a?(String)
-                          factorial = 1
-                          count = number
-                          while count > 0
-                            factorial *= count
-                            count -= 1
-                          end
-                          factorial
-                        end
-
-                        def self.of2(number)
-                          raise 'Invalid Input' if number.nil? || number.is_a?(String)
-                          (1..number).inject { |factorial, n| factorial * n }
-                        end
-
-                        def self.of3(number)
-                          raise 'Invalid Input' if number.nil? || number.is_a?(String)
-                          (1..number).reduce(1, :*)
-                        end
-                      end
-                    </code>
-                  </pre>
-                </div>
-
-                <br class="clear">
-
-                <div>
-                  <h4>FizzBuzz Challenge</h4>
-                  <p>
-                    This ruby program prints the numbers from 1 to the input. For multiples of 3, it prints 'fizz' instead of the number, and for multiples of 5, it prints 'buzz'. For numbers which are multiples of both 3 and 5, it prints 'fizzbuzz'.
-                  </p>
-                  <pre>
-                    <code class="language-ruby okaida float-left text-left">
-                      def fizzbuzz(number)
-                        raise 'Invalid Input' if number.nil? || number.is_a?(String)
-                        (1..number).each do |count|
-                          if (count % 3).zero? &amp;&amp; (count % 5).zero?
-                            puts 'fizzbuzz'
-                          elsif (count % 3).zero?
-                            puts 'fizz'
-                          elsif (count % 5).zero?
-                            puts 'buzz'
-                          else
-                            puts count
-                          end
-                        end
-                      end
-                    </code>
-                  </pre>
-                </div>
-              <br>
-            </div>
-          </div>
-        </div>
-        <!-- end of Code snippets -->
+      <!-- end of about me --> 
         <br class="clear">
         <div class="animation-element bounce-up">
           <div class="subject">
@@ -371,14 +243,13 @@
               <p>
               Please get in touch via email:
               <a href="mailto:wphoong@gmail.com" class="contact-link">
-                wphoong@gmail.com
+                wphoong3@gmail.com
               </a>
               </p>
             </span>
             <span class="float-right col-md-2">
               <a href="https://www.github.com/wphoong"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
               <a href="https://codepen.io/wilxp/pens/popular/"><i class="fa fa-codepen fa-2x" aria-hidden="true"></i></a>
-              <a href="https://www.instagram.com/wilsonou/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
             </span>
           </div>
         </div>
