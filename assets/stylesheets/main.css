@@ -94,12 +94,7 @@ img {
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
-
-  @media (max-width: 415px) {
-    background: url('../images/vintage.jpg') no-repeat;
-    background-attachment: scroll;
-    position: fixed;
-  }
+  background-attachment: fixed;
 }
 
 .name {
