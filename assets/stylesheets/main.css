@@ -84,16 +84,16 @@ img {
 
 .hero {
   margin-top: 0;
-  background: url('../images/vintage.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
   min-height: 110vh;
   width: auto;
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
   box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: url('../images/vintage.jpg') no-repeat center center fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
 
   @media (max-width: 415px) {
     background: url('../images/vintage.jpg') no-repeat;
