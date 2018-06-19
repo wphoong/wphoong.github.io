@@ -7,22 +7,26 @@
       He has extensive experience building web applications.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="assets/stylesheets/main2.css">
   <link rel="shortcut icon" href="https://cdn3.iconfinder.com/data/icons/food-and-nutrition-icons-set/28/food_cooking_meal_2-512.png" type="image/png">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
   <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism-okaidia.css" media="screen">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="assets/lib/index.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/main2.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <script src="assets/lib/index.js"></script>
+  <script>
+    window.sr = ScrollReveal();
+  </script>
 </head>
 <body>
-	<!-- Beginning of nav bar -->
-	<div id="flex-content-container">
+  <div class="container-flex">
+    <!-- Beginning of nav bar -->
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -51,9 +55,66 @@
       </div>
     </nav>
     <!-- End of Nav -->
+    <div class="banner">
+      <figure class="image">
+        <img src="./assets/images/vintage.jpg">
+        <div class="is-overlay overlay-sizing">
+          <div class="columns is-multiline is-centered is-mobile">
+            <div class="column is-6-mobile is-8-tablet is-8 is-centered text-center column-custom">
+              <h1 class="name">My name is</h1>
+              <h1 class="name">Wilson Phoong</h1>
+              <h2 class="name">I am a</h2>
+              <h2 class="name">SOFTWARE DEVELOPER</h2> 
+            </div>
+          </div>
+        </div>
+      </figure>
+    </div>
 
-    <div class="jumbotron">
+    <!-- about module -->
+    <div id="about" class="about">
+      <div class="columns is-centered is-multiline is-mobile">
+        <div class="scrollview">
+          <div class="column is-half-mobile is-offset-one-quarter-mobile is-half-tablet is-offset-one-quarter-tablet is-half is-offset-one-quarter">
+            <div class="text-center box">
+              <h1>About</h1>
+              <hr />
+              <p>
+                Wilson is a full stack software developer with extensive knowledge in building web appications with Ruby and JavaScript
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="scrollview">
+            <div class="columns is-multiline is-mobile">
+              <div class="column is-one-third box">
+                LUL
+              </div>
+              <div class="column is-one-third box">
+                KAPPA
+              </div>
+              <div class="column is-one-third box">
+                OMEGATRIHARD
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
 
     </div>
-  </body>
+
+  </div>
+  <!-- end of flex container -->
+
+
+  <script>
+    $(() => {
+      sr.reveal('.scrollview');
+    });
+
+  </script>
+</body>
 </html>
