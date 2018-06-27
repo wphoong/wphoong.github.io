@@ -37,26 +37,11 @@ figure {
   font-weight: 400;
 }
 
-.banner2 {
-  margin-top: 20;
-  background: url('../images/vintage.jpg') no-repeat center center fixed;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  min-height: 110vh;
-  width: auto;
-  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
-  box-shadow: 1px 1px 2px 0 #d0d0d0;
-}
-
 .column-custom {
-  margin-top: 30vh;
+  margin-top: 20em;
   background-color: rgba(216,210,184, 0.6);
   border-radius: 10px;
   font-family: 'comic_serif_proregular';
-
 }
 
 .name {
@@ -66,14 +51,11 @@ figure {
 
 .box {
   border: solid 1px black;
-
 }
 
 .scrollview {
   margin-top: 40px;
 }
-
-.nested-column
 
 @media screen and (min-width: 416px) and (max-width: 768px) {
   .column-custom {
@@ -87,7 +69,7 @@ figure {
 
 @media screen and (max-width: 415px) {
   .column-custom {
-    margin-top: 7vh;
+    margin-top: 5vh;
   }
 
   .name {
