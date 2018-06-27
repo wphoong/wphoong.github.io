@@ -10,17 +10,13 @@
   border: solid 1px black;
 }*/
 
-body {
-  background: url('../images/swirl.png') repeat;
-}
-
 figure {
   margin-bottom: 0;
   box-shadow: 0px 1px 3px #2a2a2a;
 }
 
 .navbar {
-  background: url('../images/dark.png');
+  background: url('../images/connect.png');
   font-family: 'Helvetica Neue';
   box-shadow: 0px 1px 3px #2a2a2a;
   padding-top: 0;
@@ -37,6 +33,12 @@ figure {
   font-weight: 400;
 }
 
+.about {
+  background: url('../images/swirl.png') repeat;
+  box-shadow: 0 5px 5px -5px #2a2a2a;
+  padding-bottom: 40px;
+}
+
 .column-custom {
   margin-top: 20em;
   background-color: rgba(216,210,184, 0.6);
@@ -48,13 +50,32 @@ figure {
   font-size: 3rem;
 }
 
-
 .box {
   border: solid 1px black;
+  box-shadow: 0 0 5px #2a2a2a;
 }
 
 .scrollview {
   margin-top: 40px;
+}
+
+.projects {
+  /*background: url('../images/hex.png') repeat;*/
+  background-color: white;
+  /*box-shadow: 0 5px 5px -5px #2a2a2a;*/
+}
+
+.bar {
+  border-top: 5px double;
+  border-bottom: none;
+  border-right: none;
+}
+
+.footer {
+  color: white;
+  background: url('../images/connect.png');
+  font-weight: 200;
+  padding-bottom: 30px;
 }
 
 @media screen and (min-width: 416px) and (max-width: 768px) {
