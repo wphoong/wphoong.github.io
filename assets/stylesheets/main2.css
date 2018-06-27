@@ -6,6 +6,10 @@
   font-style: normal;
 }
 
+a {
+  color: white;
+}
+
 /** {
   border: solid 1px black;
 }*/
@@ -34,7 +38,8 @@ figure {
 }
 
 .about {
-  background: url('../images/swirl.png') repeat;
+  background: url('../images/hex.png') repeat;
+  /*background-color: #E8D0A9;*/
   box-shadow: 0 5px 5px -5px #2a2a2a;
   padding-bottom: 40px;
 }
@@ -52,7 +57,7 @@ figure {
 
 .box {
   border: solid 1px black;
-  box-shadow: 0 0 5px #2a2a2a;
+  box-shadow: 0 0 4px #2a2a2a;
 }
 
 .scrollview {
@@ -61,8 +66,13 @@ figure {
 
 .projects {
   /*background: url('../images/hex.png') repeat;*/
-  background-color: white;
+  background-color: black;
   /*box-shadow: 0 5px 5px -5px #2a2a2a;*/
+  margin-bottom: 0;
+}
+
+.project {
+  color: white;
 }
 
 .bar {
@@ -71,11 +81,27 @@ figure {
   border-right: none;
 }
 
-.footer {
+.footer2 {
   color: white;
   background: url('../images/connect.png');
   font-weight: 200;
   padding-bottom: 30px;
+}
+
+.footer {
+  color: white;
+  background: url('../images/connect.png');
+  position: relative;
+  width: 100%;
+  min-height: 60px;
+  background-color: rgba(36, 32, 33, 1);
+  box-shadow: 0px 1px 3px #2a2a2a;
+  color: white;
+  font-family: "Helvetica Neue", Helvetica;
+  font-weight: 200;
+  padding: 10px 0px;
+  margin-top: 30px;
+  margin-top: auto
 }
 
 @media screen and (min-width: 416px) and (max-width: 768px) {
