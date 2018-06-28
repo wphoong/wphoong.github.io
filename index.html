@@ -1,261 +1,312 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Wilson Phoong's Portfolio</title>
-    <meta name="description" content="Wilson Phoong is a professional
-      software engineer specializing in full-stack development.
-      He has extensive experience with Ruby, Rails, JavaScript,
-      and building web applications.">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="assets/stylesheets/main.css">
-    <link rel="shortcut icon" href="https://cdn3.iconfinder.com/data/icons/food-and-nutrition-icons-set/28/food_cooking_meal_2-512.png" type="image/png">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/themes/prism-okaidia.css" media="screen">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="assets/lib/index.js"></script>
-  </head>
-  <body class="load">
+<head>
+	<title>Wilson Phoong's Portfolio</title>
+	<meta name="description" content="Wilson Phoong is a professional
+      software developer specializing in full-stack development.
+      He has extensive experience building web applications.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="https://cdn3.iconfinder.com/data/icons/food-and-nutrition-icons-set/28/food_cooking_meal_2-512.png" type="image/png">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/main.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+  <script src="assets/lib/index.js"></script>
+  <script>
+    window.sr = ScrollReveal();
+  </script>
+</head>
+<body>
+  <div class="container-flex">
     <!-- Beginning of nav bar -->
-    <div id="flex-content-container">
-        <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <a href="https://wphoong.github.io" class="navbar-brand">Home</a>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#about">About<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#web-apps">Web Apps</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#skills">Skills</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#footer">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://github.com/wphoong">GitHub</a>
-              </li>
-              <li class="nav-item dropdown">
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <!-- End of Nav -->
-
-        <div id="about" class="hero text-center img-fluid">
-          <div id="name">
-            <div class="name col-8 offset-2">
-              <br>
-              <h1 class="about">My name is</h1>
-              <h1 class="about">Wilson Phoong</h1>
-              <h2 class="about">I am a</h2>
-              <h2 class="about">SOFTWARE DEVELOPER</h2>
-              <hr>
-              <br>
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a href="https://wphoong.github.io" class="navbar-brand">Home</a>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/wphoong">GitHub</a>
+          </li>
+          <li class="nav-item dropdown">
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- End of Nav -->
+    <div class="banner">
+      <figure class="image">
+        <img src="./assets/images/vintage.jpg">
+        <div class="is-overlay overlay-sizing">
+          <div class="columns is-multiline is-centered is-mobile">
+            <div class="column is-6-mobile is-8-tablet is-8 is-centered text-center column-custom">
+              <h1 class="name">My name is</h1>
+              <h1 class="name">Wilson Phoong</h1>
+              <h2 class="name">I am a</h2>
+              <h2 class="name">SOFTWARE DEVELOPER</h2> 
             </div>
           </div>
         </div>
+      </figure>
+    </div>
 
-        <br class="clear">
-
-        <div class="animation-element bounce-up">
-          <div class="subject">
-            <div id="aboutme" class="booyah-box col-10 offset-1 text-center">
-              <h1>About Me</h1>
-              <hr>
-              <h3 class="col-10 offset-1 describe">
-                <span id="title">Wilson</span> is a professional
-                software developer specializing in full-stack development.
-              </h3>
-              <h3 class="col-10 offset-1 describe">
-                He has extensive experience with Ruby, Rails, JavaScript,
-                and building web applications.
-              </h3>
-              <br>
-              <hr>
-            </div>
-          </div>
-        </div>
-      <!-- end of about me --> 
-        <br class="clear">
-        <div class="animation-element bounce-up">
-          <div class="subject">
-            <div id="web-apps" class="booyah-box col-10 offset-1 text-center">
-              <h1>Web Applications</h1>
-              <hr class="bar">
-
-              <div class="row">
-                <div class="box col-12">
-                  <div class="float-left col-lg-6 col-sm-12">
-                  <h1 class="">Chess Game</h1>
-                  <h5 class="">
-                    Worked on an Agile software development team building
-                    a chess application. Under the guidance of a senior software engineer,
-                    we had weekly Agile team meetings for code reviews, sprint planning,
-                    and feature assignments.
-                  </h5>
-                  </div>
-                  <div class='col-lg-6 col-sm-12 float-left'>
-                    <img src="assets/images/chess.png" alt="No Image!" class="full-width" />
-                  </div>
-                </div>
-              </div>
-
-              <br class="clear">
-
-              <div class="row">
-                <div class="box col-12">
-                  <div class="float-right col-lg-6 col-sm-12">
-                  <h1 class="">Nomster</h1>
-                  <h5>
-                    A Yelp clone that integrates with the Google Maps API
-                    and includes features like user comments, star ratings,
-                    image uploading, and user authentication.
-                  </h5>
-                  </div>
-                  <div class='col-lg-6 col-sm-12 float-left'>
-                  <img src="assets/images/nomster.png" alt="No Image!" class="full-width" />
-                  </div>
-                </div>
-              </div>
-
-              <br class="clear">
-
-              <div class="row">
-                <div class="box col-12">
-                  <div class="float-left col-lg-6 col-sm-12">
-                    <h1>Flixter</h1>
-                    <h5>
-                      A two-sided, video-streaming marketplace platform that
-                      features credit card payment capabilities, user role
-                      management, complex user interfaces, and advanced
-                      database relationships.
-                    </h5>
-                  </div>
-                  <div class="col-lg-6 col-sm-12 float-left">
-                    <img src="assets/images/flixter.png" alt="No Image!" class="full-width" />
-                  </div>
-                </div>
-              </div>
-
-              <br class="clear">
-
-              <div class="row">
-                <div class="box col-12">
-                  <div class="float-right col-lg-6 col-sm-12">
-                    <h1>Grammable</h1>
-                    <h5>
-                      An Instagram clone that was built using industry-standard, test-driven
-                      development following numerous red/green/refactor cycles.
-                    </h5>
-                  </div>
-                  <div class="col-lg-6 col-sm-12 float-left">
-                    <img src="assets/images/grammable.png" alt="No Image!" class="full-width" />
-                  </div>
-                </div>
-              </div>
-
-              <br class="clear" />
-
-              <div class="row">
-                <div class="box col-12">
-                  <div class="float-left col-lg-6 col-sm-12">
-                    <h1>To Do MVC</h1>
-                    <h5>
-                      This single-page to-do application features a
-                      fluid user interface that– by using JavaScript–
-                      allows users to rapidly add dynamic content.
-                    </h5>
-                  </div>
-                  <div class="float-left col-lg-6 col-sm-12">
-                    <img src="assets/images/todoster.png" alt="No Image!" class="full-width" />
-                  </div>
-
-                </div>
-              </div>
-
-              <br class="clear" />
-
-              <div class="row">
-                <div class="box col-12">
-                  <div class="float-right col-lg-6 col-sm-12">
-                    <h1>Quote Generator</h1>
-                    <h5>
-                      A database-powered quote generator with a mobile-first
-                      design, using the Ruby on Rails framework, HTML, and CSS.
-                      Uses Git and GitHub for version control, and launched
-                      on Heroku.
-                    </h5>
-                  </div>
-                  <div class="float-left col-lg-6 col-sm-12">
-                    <img src="assets/images/splurty.png" alt="No Image!" class="full-width" />
-                  </div>
-                </div>
-              </div>
-              <br>
-            </div>
-          </div>
-        </div>
-        <!-- end of Web apps -->
-        <br class="clear" />
-        <div class="animation-element bounce-up">
-          <div class="subject">
-            <div id="skills" class="booyah-box col-10 offset-1 text-center">
-              <h1>Skills &amp; Tools</h1>
-              <hr class="bar"/>
-
-              <h5 class="skills-and-tools">
-                Wilson has developed proficiency and expertise
-                in the following programming languages and
-                comfort with the following tools.
-              </h5>
-
-              <div class="icons">
-                <img src="assets/images/github.png" alt="No Image!" />
-                <img src="assets/images/rubocop.png" alt="No Image!" />
-                <img src="assets/images/trello.png" alt="No Image!" />
-                <img src="assets/images/slack.png" alt="No Image!" />
-                <img src="assets/images/heroku.png" alt="No Image!" />
-                <br class="clear" />
-                <img class="img-fluid" src="assets/images/skills.png" alt="No Image!" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end of skill -->
-      <br class='clear'/>
-
-      <div id="footer">
-        <div class="container">
-          <div class="row">
-            <span id="contact" class="col-sm-10">
-              Currently entertaining new opportunities.
-              <p>
-              Please get in touch via email:
-              <a href="mailto:wphoong@gmail.com" class="contact-link">
-                wphoong3@gmail.com
-              </a>
+    <!-- about module -->
+    <div id="about" class="hero about">
+      <div class="columns is-centered is-multiline is-mobile">
+        <div class="scrollview">
+          <div class="column is-10-mobile is-offset-1-mobile is-half-tablet is-offset-one-quarter-tablet is-half is-offset-one-quarter">
+            <div class="text-center box">
+              <h1>About</h1>
+              <hr />
+              <p class="subtitle">
+                Wilson is a full stack software developer with extensive knowledge in building web appications with Ruby and JavaScript
               </p>
-            </span>
-            <span class="float-right col-md-2">
-              <a href="https://www.github.com/wphoong"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
-              <a href="https://codepen.io/wilxp/pens/popular/"><i class="fa fa-codepen fa-2x" aria-hidden="true"></i></a>
-            </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-11 is-offset-0-mobile is-offset-1-tablet is-offset-1-desktop text-center">
+          <div class="scrollview">
+            <div class="columns">
+              <div class="box column is-10-mobile is-offset-1-mobile is-one-quarter-tablet is-one-quarter-desktop">
+                <h2>< / ></h2>              
+                <hr />
+                <h5 class="subtitle">Languages</h5>
+                <p>Ruby</p>
+                <p>JavaScript</p>
+                <p>Python</p>
+              </div>
+              <div class="column is-0-mobile is-0-tablet is-1-desktop">                
+              </div>
+              <div class="box column is-10-mobile is-offset-1-mobile is-one-quarter-tablet  is-one-quarter-desktop">
+                <h2>< / ></h2>                         
+                <hr />
+                <h5 class="subtitle">Frameworks</h5>
+                <p>Ruby on Rails</p>
+                <p>Node Js/Express Js</p>                
+                <p>Django/Flask</p>
+              </div>
+              <div class="column is-0-mobile is-0-tablet is-1-desktop">                
+              </div>
+              <div class="box column is-10-mobile is-offset-1-mobile is-one-quarter-tablet  is-one-quarter-desktop">
+                <h2>< / ></h2>
+                <hr />
+                <h5 class="subtitle">Databases</h5>
+                <p>MongoDB</p>
+                <p>FirebaseDB</p>
+                <p>Postgresql</p>
+              </div>
+              <div class="column is-0-mobile is-0-tablet is-2-desktop"></div>
+            </div>
           </div>
         </div>
       </div>
-      <!-- end of footer -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-ruby.js"></script>
-    </body>
-  </html>
+    </div>
+    <!-- end of about -->
+    <!-- Projects container -->
+    <div id="projects" class="projects jumbotron text-center">
+      <h1 class="project">Projects</h1>
+      <hr /> 
+      <div class="col-10 offset-1 text-center box"> 
+
+        <div class="scrollview">
+          <div class="row">
+            <div class="col-12">
+              <div class="float-left col-lg-6 col-sm-12">
+                <h1>Media Feed Reader</h1>
+                <h5>
+                  A Personalized RSS Feed Reader for videos and news. Built using React-Native, JavaScript, and Expo.
+                </h5>
+                <br />
+              </div>
+              <div class="float-left col-lg-6 col-sm-12">
+                <img src="assets/images/mediafeedreader.png" alt="No Image!" class="full-width" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br class="clear" />
+        <div class="scrollview">
+          <div class="row">
+            <div class="col-12">
+              <div class="float-right col-lg-6 col-sm-12">
+                <h1>Photo Mosaic</h1>
+                <h5>
+                  A Photo and Gif collection Application, built with Node Js, Express Js, React Js, Redux, HTML, and CSS.
+                </h5>
+                <br />
+              </div>
+              <div class="float-left col-lg-6 col-sm-12">
+                <img src="assets/images/photomosaic.png" alt="No Image!" class="full-width" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="scrollview">
+          <div class="row">          
+            <div class=" col-12">            
+              <div class="float-left col-lg-6 col-sm-12">
+                <h1 class="">Chess Game</h1>
+                <h5 class="">
+                  Worked on an Agile software development team building
+                  a chess application. Under the guidance of a senior software engineer,
+                  we had weekly Agile team meetings for code reviews, sprint planning,
+                  and feature assignments.
+                </h5>
+                <br />
+              </div>
+              <div class='col-lg-6 col-sm-12 float-left'>
+                <img src="assets/images/chess.png" alt="No Image!" class="full-width" />
+              </div>
+            </div>
+          </div>
+        </div>      
+
+        <br class="clear">
+        <div class="scrollview">
+          <div class="row">
+            <div class="col-12">
+              <div class="float-right col-lg-6 col-sm-12">
+                <h1 class="">Nomster</h1>
+                <h5>
+                  A Yelp clone that integrates with the Google Maps API
+                  and includes features like user comments, star ratings,
+                  image uploading, and user authentication.
+                </h5>
+                <br />
+              </div>
+              <div class='col-lg-6 col-sm-12 float-left'>
+              <img src="assets/images/nomster.png" alt="No Image!" class="full-width" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br class="clear">
+        <div class="scrollview">
+          <div class="row">
+            <div class="col-12">
+              <div class="float-left col-lg-6 col-sm-12">
+                <h1>Flixter</h1>
+                <h5>
+                  A two-sided, video-streaming marketplace platform that
+                  features credit card payment capabilities, user role
+                  management, complex user interfaces, and advanced
+                  database relationships.
+                </h5>
+                <br />
+              </div>
+              <div class="col-lg-6 col-sm-12 float-left">
+                <img src="assets/images/flixter.png" alt="No Image!" class="full-width" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br class="clear">
+        <div class="scrollview">
+          <div class="row">
+            <div class="col-12">
+              <div class="float-right col-lg-6 col-sm-12">
+                <h1>Grammable</h1>
+                <h5>
+                  An Instagram clone that was built using industry-standard, test-driven
+                  development following numerous red/green/refactor cycles.
+                </h5>
+                <br />
+              </div>
+              <div class="col-lg-6 col-sm-12 float-left">
+                <img src="assets/images/grammable.png" alt="No Image!" class="full-width" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>          
+    </div>
+    <!-- end of projects -->
+
+    <div id="skills" class="skills">
+    <!-- skills container -->
+      <div class="box col-10 offset-1 text-center">
+        <div class="scrollview">
+          <h1>Additional Skills &amp; Tools</h1>
+          <hr />
+          <h5>
+            Wilson has developed proficiency and expertise
+            in the following programming languages and
+            comfort with the following tools.
+          </h5>
+        </div>
+        <div class="scrollview">
+          <div class="icons">
+            <img src="assets/images/github.png" alt="No Image!" />
+            <img src="assets/images/rubocop.png" alt="No Image!" />
+            <img src="assets/images/trello.png" alt="No Image!" />
+            <img src="assets/images/slack.png" alt="No Image!" />
+            <img src="assets/images/heroku.png" alt="No Image!" />
+            <img src="assets/images/nodeexpress.jpeg" alt="No Image!" class="skill-img" />
+            <img src="assets/images/firebase.png" alt="No Image!" class="skill-img" />
+            <img src="assets/images/reactjs.png" alt="No Image!" class="skill-img" />            
+            <br class="clear" />
+            <img src="assets/images/skills.png" alt="No Image!" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  end of skill -->
+    <!-- <br class='clear'/> -->
+
+    <!-- footer div -->
+    <div id="footer" class="footer">
+      <div class="container">
+        <div class="row">
+          <span id="contact" class="col-sm-10">
+            Currently entertaining new opportunities.
+            <p>
+            Please get in touch via email:
+            <a href="mailto:wphoong@gmail.com" class="contact-link">
+              wphoong3@gmail.com
+            </a>
+            </p>
+          </span>
+          <span class="float-right col-md-2">
+            <a href="https://www.github.com/wphoong"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+            <a href="https://codepen.io/wilxp/pens/popular/"><i class="fa fa-codepen fa-2x" aria-hidden="true"></i></a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- end of footer -->
+  </div>
+  <!-- end of flex container --> 
+
+  <script>
+    $(() => {
+      sr.reveal('.scrollview');
+    });
+
+  </script>
+</body>
+</html>
